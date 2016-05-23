@@ -69,5 +69,13 @@ public class QtiImsExtListenerBaseImpl extends IQtiImsExtListener.Stub {
     @Override
     public void receiveCallTransferResponse(int result) {
     }
+
+    @Override
+    public void onSetHandoverConfig(int result) {
+    }
+
+    @Override
+    public void onGetHandoverConfig(int result, int hoConfig) {
+    }
 }
 
