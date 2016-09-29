@@ -51,9 +51,4 @@ public class QtiCarrierConfigs {
      */
     public static final String HIDE_PREVIEW_IN_VT_CONFERENCE =
             "config_hide_preview_in_vt_confcall";
-
-    /* Flag specifying whether IMS to CS retry should be available for carrier
-       false - hard disabled.
-       true - then depends on user preference */
-    public static final String CONFIG_CS_RETRY = "config_carrier_cs_retry_available";
 }
