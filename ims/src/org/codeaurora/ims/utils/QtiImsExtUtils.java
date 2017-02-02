@@ -31,6 +31,7 @@ package org.codeaurora.ims.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -76,6 +77,8 @@ public class QtiImsExtUtils {
 
     public static final String QTI_IMS_STATIC_IMAGE_SETTING =
             "ims_vt_call_static_image";
+
+    public static final String PKG_CALL_SETTINGS = "com.qualcomm.qti.callsettings";
 
     /**
      * Definitions for the call transfer type. For easier implementation,
@@ -478,5 +481,22 @@ public class QtiImsExtUtils {
             return subscriptionManager.INVALID_SUBSCRIPTION_ID;
         }
         return subInfo.getSubscriptionId();
+    }
+
+    /**
+     * Check if carrier one call settings is present or not.
+     */
+    public static boolean isCarrierOneCallSettingsAvailable(Context context) {
+        if (context == null) {
+            Log.e(LOG_TAG, "Context is null");
+            return false;
+        }
+        try {
+            context.getPackageManager().getPackageInfo(
+                    PKG_CALL_SETTINGS, PackageManager.GET_META_DATA);
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+        return true;
     }
 }
