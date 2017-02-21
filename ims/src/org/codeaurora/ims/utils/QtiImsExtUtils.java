@@ -422,7 +422,7 @@ public class QtiImsExtUtils {
         return isCarrierConfigEnabled(context, QtiCarrierConfigs.REMOVE_MODIFY_CALL_CAPABILITY);
     }
 
-    private static PersistableBundle getConfigForDefaultImsPhoneId(Context context) {
+    public static PersistableBundle getConfigForDefaultImsPhoneId(Context context) {
         return getConfigForPhoneId(context, getImsPhoneId());
     }
 
