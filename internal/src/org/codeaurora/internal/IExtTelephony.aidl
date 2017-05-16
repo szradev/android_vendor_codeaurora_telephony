@@ -237,4 +237,11 @@ interface IExtTelephony {
     */
     boolean isPrimaryCarrierSlotId(int slotId);
 
+    /**
+    * Get current primary card slot Id.
+    * @param - void
+    * @return slot index
+    */
+    int getCurrentPrimaryCardSlotId();
+
 }
