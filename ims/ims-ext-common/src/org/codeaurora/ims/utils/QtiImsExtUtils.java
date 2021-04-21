@@ -636,6 +636,10 @@ public class QtiImsExtUtils {
                 QtiCallConstants.IMS_AUTO_REJECT + phoneId,
                 QtiCallConstants.AUTO_REJECT_CALL_DISABLED);
     }
+    // Make proxy function for working with some ims.apk 
+    public static int getAutoRejectMode(ContentResolver contentResolver, int phoneId) {
+      return getAutoReject(contentResolver, phoneId);
+    }
 
     public static boolean canAcceptAsOneWayVideo(int phoneId, Context context) {
         return (isCarrierConfigEnabled(phoneId, context,
